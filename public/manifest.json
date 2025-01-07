@@ -1,0 +1,20 @@
+{
+    "name": "Application de citation",
+    "short_name": "Citation",
+    "icons": [
+      {
+        "src": "icons/icon-192.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3f51b5"
+  }

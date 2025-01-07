@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
     <title>Examen NT Citations 2025</title>
 </head>
-<body class="bg-black flex flex-col justify-center items-center text-center h-screen">
-    <div class="text-4xl">
-        <h1 class="text-slate-700 ">"</h1>
+<body class="bg-black flex flex-col justify-center items-center h-screen">
+    <input type="button" value="Rafraichir" id="refresh" class="text-white cursor-pointer border px-2 py-2 rounded hover:bg-white hover:text-black mb-20"/>
+    <div class="text-4xl text-center">
+        <h1 class="text-slate-700 text-6xl">"</h1>
         <h1 class="text-white citation">Citation ici</h1>
     </div>
     
     <div class="flex justify-center items-center mt-8">
-            <img src="img/Ada_Lovelace_portrait.jpg" alt="" class="img object-cover w-16 h-16 rounded-full mr-2">
+            <img src="img/Ada_Lovelace_portrait.jpg" alt="" class="photo object-cover w-16 h-16 rounded-full mr-2">
         <p class="auteur text-white italic mr-4">Nom de l'auteur</p>
-        <p class="des text-slate-500">Description de l'auteur</p>
+        <p class="description text-slate-500">Description de l'auteur</p>
     </div>
-    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker enregistré'))
+            .catch(err => console.error('SW registration failed', err));
+            });
+        }
+    </script>
 
 
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
